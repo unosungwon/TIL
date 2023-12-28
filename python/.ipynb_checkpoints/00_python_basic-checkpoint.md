@@ -300,18 +300,6 @@ type(i + f)
 ## 5.3.1. short circuit evaluation
 
 ```py
-True and True   # T
-True and False   # F
-False and True   # F
-False and False   # F
-
-True or True   # T
-True or False   # T
-False or True   # T
-False or False   # F
-```
-
-```py
 'a' and 10 and True and 0 and 4 and 3.14 and 'asdf'
 
 # -> 0
