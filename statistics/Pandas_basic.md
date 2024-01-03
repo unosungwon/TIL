@@ -297,14 +297,16 @@ frame3.index
 # Index([2001, 2003, 2000], dtype='int64', name='year')
 ```
 
-## Index
+# Index
+- pandas 에서 쓰는 index 자료형
+- .index[ ]는 변경이 안됨.
 
 ## Series
 
 ### series.index[ ]
-* 파이썬 인덱스와는 다름. 
+* `파이썬 인덱스와는 다름`. 
 * Python; [a : b] 일 경우 b-1 인덱스까지만 출력
-* Series; [a : b] 일 경우 b 까지 다 출력
+* Series; `[a : b]` 일 경우 `b 까지 다 출력`
 
 ```py
 obj = pd.Series(range(3), index=list('abc'))
@@ -315,8 +317,12 @@ obj = pd.Series(range(3), index=list('abc'))
 
 obj['a']
 # value 출력 0
+
 obj.index[0]
 # index 출력 'a'
 
+obj.index[1:]
+# Index(['b', 'c'], dtype='object')
+# index 자료형
 
 ```
