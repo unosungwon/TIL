@@ -1,8 +1,19 @@
-## [!DOCTYPE html] [/html]
+
+> Understanding HTML hierarchy is important because child elements can `inherit` `behavior and styling` from their parent element. 
+>
+>자식 요소는 부모 요소의 속성을 상속받는다. 
+
+## [!DOCTYPE html]
+- declaration "선언" : 브라우저에게 html 버전을 지정하는 선언
+
+## [html][/html]
+- 이제부터 사용하는 코드들을 html 로 해석(interpret) 하겠다.
 
 ## head 태그 
 ### ! + tab
 - [!DOCTYPE html], [head], [body] 태그 자동으로 생성.
+- `metadata`를 포함한다.    
+  - 브라우저에게 이 페이지 자체에 대한 정보를 주는 곳
 
 
 ## body 태그
@@ -16,6 +27,12 @@
 
 ### [div][/div]
 - 분할, 레이아웃 나누기
+- 같은 내용끼리 묶기 위해 사용. 
+- 속성 추가 가능. `div id = ""` 으로 분할된 부분에 이름 부여 가능.
+- 따로 보여지는 `시각적인 속성은 없음. `
+
+### [span][/span]
+- 문단이나 문장 안에 강조하고 싶은 부분에 사용
 
 
 ### [p][/p]
