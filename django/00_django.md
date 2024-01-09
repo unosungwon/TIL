@@ -52,3 +52,104 @@
     ```
 
 7. ` html 파일`은 꼭 `app 폴더내의 templates 폴더 생성`해서 만들어야 함. 
+
+
+
+
+## 장고 반복되는 html head 부분 자동 처리하기
+1.  project folder 바로 아래에 templates 라는 폴더 만들기. 
+1.  그 폴더 아래에 base.html 파일 생성.
+
+1.  templates 라는 폴더를 나중에 base_dir 가 templates 를 찾을때 이 폴더도 포함해서 찾아달라고 해줘야 함. 
+  - base_dir ( 프로젝트 폴더) > settings.py > templates 에서 'DIRS' 에 [BASE_DIR/ 'templates'] 이라고 작성.
+
+1.  base.html 에 block 요소 적기
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASE.html</h1>
+    
+    {% block content %}
+    {% endblock content %}
+    
+</body>
+</html>
+```
+
+1.  이제 apps > templates 에서 html 만들 시 
+```html
+{% extends "base.html" %}  => 이게 파일의 최상단에 있어야 한다. 
+
+{% block content %}
+  <!-- 여기에 원하는 글씨 적으면 됨.  -->
+{% endblock content %}
+```
+
+
+
+## url/변수 
+- url/string1/ 하고 뒤에 변수가 와서, 특정 string 말고 다른 불특정한 글자를 넣어도
+넣은 글자 그대로 보고 싶음.
+
+1. apps > urls.py 에 
+```py
+urlpatterns = [
+    path('greeitng/<str:name>/', views.greeting),
+]
+# 'url/greeting/name 이라는 변수' 를 주소창에 썻을때, greeting 함수로 넘어가라.
+```
+
+2. apps > views.py 에서
+
+```py
+def greeting(request, name):
+        # 원래 써야하는 request, 뒤에는 url 뒤에 들어올 변수명을 parameter 로 갖기
+
+    return render(request, 'var_routing/greeting.html',{
+        'name' : name
+    })
+
+    # django 가 html 을 찾을때,  installed_apps 에 먼저 쓰여져 있는 순서대로 templates 폴더를 찾는다. 같은 이름의 html 을 다른 app 에 사용하고 싶다면, templates 에 하위 폴더를 또 만들어야 함. 
+
+    # render 시, 바로 html 파일 이름을 적는 것이 아니라, django 가 먼저 templates 폴더 내에 적은 하위 폴더명을 찾도록 만들고, 그 다음 html 파일을 찾도록 만든다!! 
+```
+
+
+
+
+## 장고 form 형식 만들어서 정보 입력 시 자동으로 연결된 url 로 이동하기
+- tistory 에 정리 => https://genuine-suineg.tistory.com/5
+
+
+
+## method = "GET" 과 "POST"
+
+- `GET` : URL 뒤에 내가 입력한 데이터들이 나옴, 세상천하에 다 보여진다..
+  - 만약, 비밀번호를 입력했으면 url 창에 다 보여진다
+  > http://127.0.0.1:8000/utils/bmi_out/?height=155&weight=55
+
+
+- `POST` : url 뒤에 입력한 데이터가 나오지 않는다!! 
+  - 하지만 아래와 같은 오류가 나옴 
+  - 오류 내용은 `보안이슈`
+>
+> Forbidden (403)
+> CSRF verification failed. Request aborted.
+>
+> You are seeing this message because this site requires a CSRF cookie when submitting forms. >This cookie is required for security reasons, to ensure that your browser is not being hijacked by third parties.
+>
+
+=> `GET 요청`은 별거 아니다. 대충 해도 된다. `보안걱정 안된다`.
+
+=> `POST 요청`은 별거. 서버가 바뀔 수 있으며 `보안걱정 된다`. 
+
+- 그래서 forbidden 된 것을 통과시키기 위해선 
+  `프로젝트폴더 > settings.py 에 MIDDLEWARE` 에서 `'django.middleware.csrf.CsrfViewMiddleware' 을 비활성화` 시킨다. 
+
+- 그 이후 views.py 에서 `dictionary` 가 GET 에서 `POST` 로 바뀌기 때문에, 이것도 바꿔줘야 함. 
