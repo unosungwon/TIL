@@ -102,14 +102,14 @@
 urlpatterns = [
     path('greeitng/<str:name>/', views.greeting),
 ]
-# 'url/greeting/name 이라는 변수' 를 주소창에 썻을때, greeting 함수로 넘어가라.
+# domain/greeting/홍길동 => 을 주소창에 썻을때, greeting 함수로 넘어가라.
 ```
 
 2. apps > views.py 에서
 
 ```py
 def greeting(request, name):
-        # 원래 써야하는 request, 뒤에는 url 뒤에 들어올 변수명을 parameter 로 갖기
+        # 원래 써야하는 request, 뒤에는 url 뒤에 들어올 변수명('홍길동')을 parameter 로 갖기
 
     return render(request, 'var_routing/greeting.html',{
         'name' : name
@@ -150,6 +150,79 @@ def greeting(request, name):
 => `POST 요청`은 별거. 서버가 바뀔 수 있으며 `보안걱정 된다`. 
 
 - 그래서 forbidden 된 것을 통과시키기 위해선 
-  `프로젝트폴더 > settings.py 에 MIDDLEWARE` 에서 `'django.middleware.csrf.CsrfViewMiddleware' 을 비활성화` 시킨다. 
+  1. `프로젝트폴더 > settings.py 에 MIDDLEWARE` 에서 `'django.middleware.csrf.CsrfViewMiddleware' 을 비활성화` 시킨다. 
 
-- 그 이후 views.py 에서 `dictionary` 가 GET 에서 `POST` 로 바뀌기 때문에, 이것도 바꿔줘야 함. 
+  2. 혹은, 비활성화 대신, html에 `token을 활용`해서 가능하게 한다.
+    ```html
+    <div>
+    <form action="/utils/bmi_out/" method="POST">
+        {% csrf_token %}
+        <div>
+    ```
+
+- 그 이후 views.py 에서 `dictionary` 가 GET 에서 `POST` 로 바뀌기 때문에, 이것도 바꿔줘야 함.
+
+
+## 장고 url 변수화
+
+1. 프로젝트폴더에 url 첫 접두사 작성
+   ```py
+   urlpatterns = [
+    path('string1/', include('app.urls')),
+    ]
+   ```
+
+2. app에 urls.py 에 app_name 으로 변수 할당하기
+   ```py
+   app_name = 'asdf'
+
+    urlpatterns = [
+    # domain/string1/new/  => asdf:new
+    path('new/', views.new, name='new'),
+   ```
+
+3. html 에서 url 연결할 시 사용 방법 
+   - <app_name : name>
+  
+    ```html
+    "{% url "asdf:new" %}"
+    ```
+
+
+## 장고에서 DB 만들기 
+1. APP > models.py 에 class 만들기
+   ```py
+   from django.db import models
+
+   class Class(models.Model):  # Class 라는 class명이 테이블이름이 됨.
+    column1 = models.CharField(max_length = 10)
+    column2 = models.TextField()
+    
+    # class 의 attribute 만들고, 데이터 속성도 정해놓기
+   ```
+
+2. DB 청사진 확인하기
+   ```py
+   $ py manage.py makemigrations app이름
+   ```
+
+3. DB 만들기
+   ```py
+   $ py manage.py migrate app이름
+   ```
+
+
+
+## POST 로 받은 데이터 DB에 저장하기
+1. POST 로 받은 데이터는 dictionary 형태로 있으니 value 값만 추출해서 변수에 저장하기
+   ```py
+    column1 = request.POST['column1']
+    column2 = request.POST['column2']
+   ```
+2. 변수에 할당한 값들을 class 를 instance 화 시켜서 class attribute 에 저장하기
+   ```py
+   c = Class()  # => Class instance
+   c.column1 = column1
+   c.column2 = column2   # => Class 의 attribution 인 column1 과 column2 에 변수에 할당한 값 저장하기
+   c.save()     # => instance.save() 해야 DB 에 저장이 된다. 
+   ```
