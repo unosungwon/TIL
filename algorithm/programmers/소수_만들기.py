@@ -1,5 +1,6 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/12977
 
+# 내 답안
 def solution(nums):
     s = []
     for a in range(len(nums)-2):
@@ -14,5 +15,6 @@ def solution(nums):
         else:
             result += 1
     print(result)
+
 
 solution([1,2,7,6,4])

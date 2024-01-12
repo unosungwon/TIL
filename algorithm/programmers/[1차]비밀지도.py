@@ -50,15 +50,6 @@ def solution(n, arr1, arr2):
     print(secret_maps)
 
 
-# 2. 더 쉬운 모범 예시 답안
-def solution(n, arr1, arr2):
-    answer = []
-    for x, y in zip(arr1, arr2):
-        arr12 = bin(x|y)[2:]
-        arr12 = arr12.replace('1', '#')
-        arr12 = arr12.replace('0', ' ')
-        answer.append(arr12)
 
-    print(answer)
 
 solution(5,[9,20,28,18,11],[30,1, 21, 17, 28])
