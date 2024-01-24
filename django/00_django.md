@@ -226,3 +226,10 @@ def greeting(request, name):
    c.column2 = column2   # => Class 의 attribution 인 column1 과 column2 에 변수에 할당한 값 저장하기
    c.save()     # => instance.save() 해야 DB 에 저장이 된다. 
    ```
+
+
+## Form Class 사용해서
+### 1. 유효성 검사 (Validation)
+
+
+### 2. 입력 input 태그
