@@ -3,7 +3,7 @@ https://datascienceschool.net/02%20mathematics/02.02%20%EB%B2%A1%ED%84%B0%EC%99%
 # 선형조합
 
 ## 선형조합
-* 벡터/행렬에 스칼라값을 곱한 후 더하거나 뺀 것 == `벡터/행렬의 선형조합`
+* 벡터/행렬에 스칼라값을 곱한 후 더하거나 뺀 것 == `벡터/행렬의 선형조합` <br>
 $$
 \begin{align}
 c_1x_1 + c_2x_2 + c_3x_3 + \cdots + c_Lx_L = x
@@ -38,7 +38,7 @@ $$
 
 ## 내적
 * 벡터와 벡터의 곱셈
-* 벡터 내적의 결과는 `스칼라`가 나온다
+* 벡터 내적의 결과는 `스칼라`가 나온다 <br>
 $$ 
 \begin{align}
 x^T y
@@ -47,23 +47,23 @@ $$
 
 * `전제조건`
   * 앞의 벡터는 행 벡터, 뒤의 벡터는 열 벡터 => '`ㅓ`' 자 모양
-  * 두 벡터의 길이가 같아야 함
-    $$
-    \begin{align}
-    x^T y = 
-    \begin{bmatrix}
-    x_{1} & x_{2} & \cdots & x_{N} 
-    \end{bmatrix}
-    \begin{bmatrix}
-    y_{1} \\
-    y_{2} \\
-    \vdots \\
-    y_{N} \\
-    \end{bmatrix} 
-    = x_1 y_1 + \cdots + x_N y_N 
-    = \sum_{i=1}^N x_i y_i
-    \end{align}
-    $$
+  * 두 벡터의 길이가 같아야 함<br>
+  $$
+  \begin{align}
+  x^T y = 
+  \begin{bmatrix}
+  x_{1} & x_{2} & \cdots & x_{N} 
+  \end{bmatrix}
+  \begin{bmatrix}
+  y_{1} \\
+  y_{2} \\
+  \vdots \\
+  y_{N} \\
+  \end{bmatrix} 
+  = x_1 y_1 + \cdots + x_N y_N 
+  = \sum_{i=1}^N x_i y_i
+  \end{align}
+  $$
 
 
 * 벡터의 내적은 `가중합`을 계산할 때 사용될 수 있음.
@@ -159,7 +159,7 @@ $$
 ## 행렬과 행렬의 곱셈
 * 벡터와 벡터의 곱셈은 스칼라가 나오지만, 행렬과 행렬의 곱셈은 행렬이 나온다
 * 전제조건:
-  * `$A$의 열의 수`와 뒤의 행렬 `$B$의 행의 수`와 같아야 한다.
+  * $A$ 의 열의 수와 뒤의 행렬 $B$ 의 행의 수와 같아야 한다.
 
 $$ 
 \begin{align}
@@ -169,7 +169,7 @@ $$
 
 * 곱할때는 `앞 행렬의 1번째 행(행벡터) & 뒤 행렬의 첫번째 열(열벡터)` 을 곱해서 결과 핼렬의 첫번쨰 행의 첫번쨰 열에 기입. 
 * 벡터의 곱셈은 스칼라이므로 스칼라가 기입될 것.
-* `뒤 행렬의 모든 열을 다 돌았으면`, `다시 앞 행렬의 두번째 행 & 뒤 행렬의 첫번째 열`부터 곱한다.
+* `뒤 행렬의 모든 열을 다 돌았으면`, `다시 앞 행렬의 두번째 행 & 뒤 행렬의 첫번째 열`부터 곱한다. <br>
 
 $$
 \begin{align}
@@ -183,10 +183,7 @@ a_{41} & a_{42} & a_{43} \\
 {b_{11}} & b_{12} \\
 {b_{21}} & b_{22} \\
 {b_{31}} & b_{32} \\    
-\end{bmatrix}
-
-=
-
+\end{bmatrix} =
 \begin{bmatrix}
 (a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31}) & (a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32}) \\
 (a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31}) & (a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32}) \\
@@ -198,7 +195,7 @@ $$
 
 
 ## 행렬의 교환법칙과 분배법칙
-* 교환법칙 불가능, 분배법칙 가능
+* 교환법칙 불가능, 분배법칙 가능<br>
 $$ 
 \begin{align}
 AB \neq BA  
@@ -246,7 +243,7 @@ $$
 
 
 ## 행렬 곱셈의 연결
-* 연속된 행렬의 곱셈은 교환법칙만 안될 뿐, 순서가 맞다면 상관 없다. 
+* 연속된 행렬의 곱셈은 교환법칙만 안될 뿐, 순서가 맞다면 상관 없다. <br>
 $$ 
 \begin{align}
 ABC = (AB)C = A(BC)
@@ -279,7 +276,7 @@ $$
 
 
 ## 행렬과 벡터의 곱
-* 행렬$M \in \mathbf{R}^{N \times M}$ 과,  ${v} \in \mathbf{R}^{M\times1}$ 의 곱은 벡터 $Mv \in \mathbf{R}^{N \times 1}$ 가 나온다
+* 행렬 ${M} \in \mathbf{R}^{N \times M}$ 과,  ${v} \in \mathbf{R}^{M\times1}$ 의 곱은 벡터 ${Mv} \in \mathbf{R}^{N \times 1}$ 가 나온다 <br>
 
 $$
 \begin{align}
@@ -288,10 +285,7 @@ $$
 & & M & &\\ 
 \phantom{} & \phantom{} & \phantom{} & \phantom{} & \phantom{} \\ 
 \end{matrix}} \,
-\boxed{\begin{matrix} \phantom{\LARGE\mathstrut} \\ v \\ \phantom{\LARGE\mathstrut} \end{matrix}}
-
-=
-
+\boxed{\begin{matrix} \phantom{\LARGE\mathstrut} \\ v \\ \phantom{\LARGE\mathstrut} \end{matrix}}=
 \boxed{\begin{matrix} 
 \phantom{} \\ 
 Mv \\ 
@@ -317,8 +311,7 @@ $$
 \end{bmatrix} 
 \begin{bmatrix}
 w_1 \\ w_2 \\ \vdots \\ w_M
-\end{bmatrix}
-=
+\end{bmatrix}=
 \begin{matrix}
 w_1\,\boxed{\begin{matrix} \phantom{\LARGE\mathstrut} \\ c_{1_{\phantom{1}}} \\ \phantom{\LARGE\mathstrut} \end{matrix}} & + &
 w_2\,\boxed{\begin{matrix} \phantom{\LARGE\mathstrut} \\ c_{2_{\phantom{1}}} \\ \phantom{\LARGE\mathstrut} \end{matrix}}& + & 
@@ -419,50 +412,46 @@ $$
 * 실제y - 예측y = 오차
   * `벡터 하나` $x_i$의 가중합 $w^Tx_i$
   * `벡터 하나의 잔차` = 실제값 - 예측값 = $e_i$
-  $$ 
-  \begin{align}
-  e_i = y_i - \hat{y}_i  = y_i - w^Tx_i
-  \end{align}
-  $$
+$$ 
+\begin{align}
+e_i = y_i - \hat{y}_i  = y_i - w^Tx_i
+\end{align}
+$$
 
   * 모든 독립변수 `(여러벡터)` 벡터의 `잔차` = $e$
-  $$
-  \begin{align}
-  \begin{aligned}
-  e 
-  &=
-  \begin{bmatrix}
-  e_{1} \\
-  e_{2} \\
-  \vdots \\
-  e_{M} \\
-  \end{bmatrix}
-  \\ 
-  &=
-  \begin{bmatrix}
-  y_{1} \\
-  y_{2} \\
-  \vdots \\
-  y_{M} \\
-  \end{bmatrix}
-  -
-  \begin{bmatrix}
-  x^T_{1}w \\
-  x^T_{2}w \\
-  \vdots \\
-  x^T_{M}w \\
-  \end{bmatrix}
-  \\ 
-  &= y - Xw
-  \end{aligned}
-  \end{align}
-  $$
 
-  $$
-  \begin{align}
-  e = y - Xw
-  \end{align}
-  $$
+$$
+\begin{align}
+\begin{aligned}
+e &=
+\begin{bmatrix}
+e_{1} \\
+e_{2} \\
+\vdots \\
+e_{M} \\
+\end{bmatrix}
+\\ &=
+\begin{bmatrix}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{M} \\
+\end{bmatrix}-
+\begin{bmatrix}
+x^T_{1}w \\
+x^T_{2}w \\
+\vdots \\
+x^T_{M}w \\
+\end{bmatrix}\\ 
+&= y - Xw
+\end{aligned}
+\end{align}
+$$
+$$
+\begin{align}
+e = y - Xw 
+\end{align}
+$$
 
 
 
@@ -470,11 +459,11 @@ $$
 * 잔차 크기 구하기 위해 제곱합을 한다.
 * 행렬의 제곱합 구하는 것 처럼 $e^Te$ 로 쓸 수 있음
 
-  $$
-  \begin{align}
-  \sum_{i=1}^{N} e_i^2 = \sum_{i=1}^{N} (y_i - w^Tx_i)^2 = e^Te =  (y - Xw)^T (y - Xw)
-  \end{align}
-  $$
+$$
+\begin{align}
+\sum_{i=1}^{N} e_i^2 = \sum_{i=1}^{N} (y_i - w^Tx_i)^2 = e^Te =  (y - Xw)^T (y - Xw)
+\end{align}
+$$
 
 
 
@@ -485,8 +474,7 @@ $$
 $$
 \begin{align}
 \begin{aligned}
-x^T A x 
-&= 
+x^T A x &= 
 \begin{bmatrix}
 x_{1} & x_{2} & \cdots & x_{N} 
 \end{bmatrix}
@@ -534,127 +522,120 @@ b_{21} & b_{22}
 $$
 
 1. 앞의 행렬을 행벡터로 나누어 계산
-  $$
-  \begin{align}
-  A = 
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{} & a_1^T & \phantom{} \end{matrix}} \\ 
-  \boxed{\begin{matrix} \phantom{} & a_2^T & \phantom{} \end{matrix}} \\ 
-  \end{bmatrix}
-  \end{align}
-  $$
-
-  $$
-  \begin{align}
-  a_1^T = 
-  \begin{bmatrix}
-  a_{11} & a_{12} 
-  \end{bmatrix}
-  ,\;\;
-  a_2^T = 
-  \begin{bmatrix}
-  a_{21} & a_{22} 
-  \end{bmatrix}
-  \end{align}
-  $$
-
-  $$
-  \begin{align}
-  AB 
-  =
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{} & a_1^T & \phantom{} \end{matrix}} \\ 
-  \boxed{\begin{matrix} \phantom{} & a_2^T & \phantom{} \end{matrix}} \\ 
-  \end{bmatrix}
-  B
-  =
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{} & a_1^TB & \phantom{} \end{matrix}} \\ 
-  \boxed{\begin{matrix} \phantom{} & a_2^TB & \phantom{} \end{matrix}} \\ 
-  \end{bmatrix}
-  \end{align}
-  $$
+$$
+\begin{align}
+A = 
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{} & a_1^T & \phantom{} \end{matrix}} \\ 
+\boxed{\begin{matrix} \phantom{} & a_2^T & \phantom{} \end{matrix}} \\ 
+\end{bmatrix}
+\end{align}
+$$
+$$
+\begin{align}
+a_1^T = 
+\begin{bmatrix}
+a_{11} & a_{12} 
+\end{bmatrix}
+,\;\;
+a_2^T = 
+\begin{bmatrix}
+a_{21} & a_{22} 
+\end{bmatrix}
+\end{align}
+$$
+$$
+\begin{align}
+AB =
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{} & a_1^T & \phantom{} \end{matrix}} \\ 
+\boxed{\begin{matrix} \phantom{} & a_2^T & \phantom{} \end{matrix}} \\ 
+\end{bmatrix}
+ B =
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{} & a_1^TB & \phantom{} \end{matrix}} \\ 
+\boxed{\begin{matrix} \phantom{} & a_2^TB & \phantom{} \end{matrix}} \\ 
+\end{bmatrix}
+\end{align}
+$$
 ---
 
 2. 뒤의 행렬을 열벡터로 나누어 계산
 
-  $$
-  \begin{align}
-  B = 
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}} \!\!\!\! &
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ b_2 \\ \phantom{\mathstrut} \end{matrix}} 
-  \end{bmatrix}
-  \end{align}
-  $$
+$$
+\begin{align}
+B = 
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}}\!\!\!\! &
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ b_2 \\ \phantom{\mathstrut} \end{matrix}} 
+\end{bmatrix}
+\end{align}
+$$
 
-  $$
-  \begin{align}
-  b_1 = 
-  \begin{bmatrix}
-  b_{11} \\
-  b_{21} \\
-  \end{bmatrix}
-  ,\;\;
-  b_2 = 
-  \begin{bmatrix}
-  b_{21} \\
-  b_{22}
-  \end{bmatrix}
-  \end{align}
-  $$
+$$
+\begin{align}
+b_1 = 
+\begin{bmatrix}
+b_{11} \\
+b_{21} \\
+\end{bmatrix}
+,\;\;
+b_2 = 
+\begin{bmatrix}
+b_{21} \\
+b_{22}
+\end{bmatrix}
+\end{align}
+$$
 
-  $$
-  \begin{align}
-  AB 
+$$
+\begin{align}
+AB 
 
   ==
 
-  A
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}} \!\!\!\! & 
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ b_2 \\ \phantom{\mathstrut} \end{matrix}}
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ Ab_1 \\ \phantom{\mathstrut} \end{matrix}} \!\!\!\! &
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ Ab_2 \\ \phantom{\mathstrut} \end{matrix}}
-  \end{bmatrix}
-  \end{align}
-  $$
+A
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}} \!\!\!\! & 
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ b_2 \\ \phantom{\mathstrut} \end{matrix}}
+\end{bmatrix}=
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ Ab_1 \\ \phantom{\mathstrut} \end{matrix}} \!\!\!\! &
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ Ab_2 \\ \phantom{\mathstrut} \end{matrix}}
+\end{bmatrix}
+\end{align}
+$$
 ---
 
 3. 앞의 행령을 열벡터로, 뒤의 행렬을 행벡터로 나눠 스칼라처럼 계산 가능
 
-  $$
-  \begin{align}
-  AB =
-  \begin{bmatrix}
-  a_1 & a_2
-  \end{bmatrix}
-  \begin{bmatrix}
-  b_1^T \\ b_2^T
-  \end{bmatrix} =
-  a_1b_1^T + a_2b_2^T
-  \tag{2.2.97}
-  \end{align}
-  $$
+$$
+\begin{align}
+AB =
+\begin{bmatrix}
+a_1 & a_2
+\end{bmatrix}
+\begin{bmatrix}
+b_1^T \\ b_2^T
+\end{bmatrix} =
+a_1b_1^T + a_2b_2^T
+\end{align}
+$$
 
-  $$
-  \begin{align}
-  AB =
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ a_1 \\ \phantom{\mathstrut} \end{matrix}}  \!\!\!\!& 
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ a_2 \\ \phantom{\mathstrut} \end{matrix}}  \!
-  \end{bmatrix}
-  \begin{bmatrix}
-  \boxed{\begin{matrix} \phantom{} & b_1^T & \phantom{} \end{matrix}} \\ 
-  \boxed{\begin{matrix} \phantom{} & b_2^T & \phantom{} \end{matrix}} \\ 
-  \end{bmatrix}=
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ a_1 \\ \phantom{\mathstrut} \end{matrix}} 
-  \boxed{\begin{matrix} \phantom{} & b_1^T & \phantom{} \end{matrix}} +
-  \boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}} 
-  \boxed{\begin{matrix} \phantom{} & b_2^T & \phantom{} \end{matrix}} 
-  \tag{2.2.98}
-  \end{align}
-  $$
+$$
+\begin{align}
+AB =
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ a_1 \\ \phantom{\mathstrut} \end{matrix}}  \!\!\!\!& 
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ a_2 \\ \phantom{\mathstrut} \end{matrix}}  \!
+\end{bmatrix}
+\begin{bmatrix}
+\boxed{\begin{matrix} \phantom{} & b_1^T & \phantom{} \end{matrix}} \\ 
+\boxed{\begin{matrix} \phantom{} & b_2^T & \phantom{} \end{matrix}} \\ 
+\end{bmatrix}=
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ a_1 \\ \phantom{\mathstrut} \end{matrix}} 
+\boxed{\begin{matrix} \phantom{} & b_1^T & \phantom{} \end{matrix}} +
+\boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}} 
+\boxed{\begin{matrix} \phantom{} & b_2^T & \phantom{} \end{matrix}} 
+\end{align}
+$$
