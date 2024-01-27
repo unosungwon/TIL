@@ -184,7 +184,9 @@ a_{41} & a_{42} & a_{43} \\
 {b_{21}} & b_{22} \\
 {b_{31}} & b_{32} \\    
 \end{bmatrix}
+
 =
+
 \begin{bmatrix}
 (a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31}) & (a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32}) \\
 (a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31}) & (a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32}) \\
@@ -287,7 +289,9 @@ $$
 \phantom{} & \phantom{} & \phantom{} & \phantom{} & \phantom{} \\ 
 \end{matrix}} \,
 \boxed{\begin{matrix} \phantom{\LARGE\mathstrut} \\ v \\ \phantom{\LARGE\mathstrut} \end{matrix}}
+
 =
+
 \boxed{\begin{matrix} 
 \phantom{} \\ 
 Mv \\ 
@@ -603,7 +607,9 @@ $$
   $$
   \begin{align}
   AB 
-  =
+
+  ==
+
   A
   \begin{bmatrix}
   \boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}} \!\!\!\! & 
@@ -622,15 +628,13 @@ $$
 
   $$
   \begin{align}
-  AB 
-  =
+  AB =
   \begin{bmatrix}
   a_1 & a_2
   \end{bmatrix}
   \begin{bmatrix}
   b_1^T \\ b_2^T
-  \end{bmatrix}
-  =
+  \end{bmatrix} =
   a_1b_1^T + a_2b_2^T
   \tag{2.2.97}
   \end{align}
@@ -638,8 +642,7 @@ $$
 
   $$
   \begin{align}
-  AB 
-  =
+  AB =
   \begin{bmatrix}
   \boxed{\begin{matrix} \phantom{\mathstrut} \\ a_1 \\ \phantom{\mathstrut} \end{matrix}}  \!\!\!\!& 
   \boxed{\begin{matrix} \phantom{\mathstrut} \\ a_2 \\ \phantom{\mathstrut} \end{matrix}}  \!
@@ -647,11 +650,9 @@ $$
   \begin{bmatrix}
   \boxed{\begin{matrix} \phantom{} & b_1^T & \phantom{} \end{matrix}} \\ 
   \boxed{\begin{matrix} \phantom{} & b_2^T & \phantom{} \end{matrix}} \\ 
-  \end{bmatrix}
-  =
+  \end{bmatrix}=
   \boxed{\begin{matrix} \phantom{\mathstrut} \\ a_1 \\ \phantom{\mathstrut} \end{matrix}} 
-  \boxed{\begin{matrix} \phantom{} & b_1^T & \phantom{} \end{matrix}} 
-  +
+  \boxed{\begin{matrix} \phantom{} & b_1^T & \phantom{} \end{matrix}} +
   \boxed{\begin{matrix} \phantom{\mathstrut} \\ b_1 \\ \phantom{\mathstrut} \end{matrix}} 
   \boxed{\begin{matrix} \phantom{} & b_2^T & \phantom{} \end{matrix}} 
   \tag{2.2.98}
